@@ -1,6 +1,7 @@
 const show = document.getElementById("show");
 const copy = document.getElementById("copy");
 const music = new Audio("assets/music.mp3");
+const notCookies = document.getElementById("notCookies");
 
 // then the show button is clicked then show a embed youtube video
 show.addEventListener("click", () => {
@@ -13,6 +14,7 @@ show.addEventListener("click", () => {
 
   // add styles to the video
   video.classList.add("display-block");
+  notCookies.classList.add("display-none");
 
   // add the button to a not allowed button
   show.classList.add("c-not-allowed");
@@ -34,6 +36,9 @@ copy.addEventListener("click", () => {
   navigator.clipboard.writeText(url).then(function () {
     console.log("Copied to clipboard");
   });
+
+  // remove cookie bg & text
+  document.getElementById("remove").remove();
 
   // show the notification
   const notification = document.getElementById("notification");
